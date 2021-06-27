@@ -1,0 +1,191 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css"></link>
+<script src="jquery-3.3.1.js"></script>
+
+<style>
+
+
+.main_sec .time_table
+{
+	
+	height:auto; 
+     width:1200px;
+	margin-left:0px;
+	margin-top:30px;
+	
+	
+}
+
+.main_sec .time_table table
+{
+	background-color:white;
+	height:auto; 
+	width:1200px;
+	border:1px solid black;
+}
+
+.main_sec .time_table table tr:nth-child(odd) 
+{
+  background-color: #f2f2f2;
+}
+
+.main_sec .time_table table th
+{
+	height:30px; 
+	width:230px;
+	padding:10px;
+	background-color:gainsboro;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+}
+
+.main_sec .time_table table td
+{
+	height:30px; 
+	width:230px;
+			padding:10px;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+}
+.main_sec
+{
+
+height:350px;
+
+}
+.main_sec .search_head
+{
+	margin:35px 10px 15px 10px;
+}
+.main_sec .search_head .search
+{
+	width:300px;
+	height:35px;
+	font-size:16px;
+	
+}
+.main_sec .search_head .startSearch
+{
+	height:35px;
+	width:100px;
+}
+
+.main_lowersec 
+{
+
+height:400px;
+}
+.main_lowersec .search_result input 
+{
+  width:250px;
+font-size:16px;
+
+}
+.main_lowersec .search_result select 
+{
+  width:250px;
+font-size:16px;
+height:40px;
+margin-left:50px;
+
+}
+.main_lowersec .search_result p{
+font-size:17px;
+}
+.main_lowersec .search_result {
+ margin-left:-150px;
+
+
+}
+
+</style>
+<title>Attendance Management System</title>
+</head>
+<body>
+<p id="dash_head" >View Teacher Report</p>
+<form action="ViewFileteacher" method="post"  autocomplete="off">
+
+<p class="user">
+<figure style="margin-left:1140px; margin-top:-50px;" >
+<img src="pictures/user.png" width="100px" height="100px" style="margin-left:15px;"/>
+<figcaption class="userN"  style="font-size:20px; padding-top:10px;">
+<input type="text" name="userName" style="width:150px; font-size:18px;padding:5px;" disabled>
+</figcaption>
+</figure>
+</p>
+<br>
+<div class="main_sec" style="border-bottom:none;">
+<p  class="search_head"><input type="text"  placeholder='  Enter Subject' class='searchSubj' style="width:1000px;" name="searchSubj"/>  <input type="Submit" value="Search" class="startSearch"  name ='findSubj'/></p>
+
+<div class="time_table" style="overflow-x:auto;">
+
+</div>
+<input type="button" value="Back" onclick='history.back()' style="height:40px; margin-top:100px; margin-left:100px;margin-bottom:100px;"/>
+<input type="submit" value="New Teacher" name='addTeach' style="height:40px; margin-left:100px;margin-top:100px; margin-bottom:100px;"/>
+<a href='Login.html'><input type="button" value="LogOut" style="height:40px; margin-left:100px;margin-top:100px; margin-bottom:100px;"/></a>
+<p class="selected_values"></p>
+</div>
+
+
+</form>
+<script>
+if($("p").hasClass("user_name"))
+{
+$(".user_name").hide();
+var name = $(".user_name").text();
+$(".userN input").val(name);
+
+$("form .selected_values").append("<input type='text' class='select_val'  name='selected_name' value='"+name+"' />");
+		$('.selected_values input').hide();
+
+}
+
+$(".time_table table").hide();
+
+if($("p").hasClass("findSubj"))
+{
+$(".findSubj").hide();
+var name = $(".findSubj").text();
+$(".search_head .searchSubj").val(name);
+$(".searchSubj").attr('disabled','disabled');
+
+}
+
+if($("table").hasClass("ttableResult"))
+{
+$(".ttableResult").hide();
+
+$(".time_table").append("<table class='Time_table' border='1'><tr><th><b>Teachers Name</b></th><th><b>Subject Name</b></th><th><b>Phone No.</b> </th><th><b>Gender</b></th></tr></table>");
+
+var rows = (($(".ttableResult tr").length) -1);
+var cols =4;
+var sub="";
+for(var i=1;i<=rows;i++)
+{
+      $(".Time_table").append("<tr></tr>");
+
+  for(var j=0;j<cols;j++)
+  {
+     sub=$(".ttableResult tr:nth("+i+") td:nth("+j+")").text();
+	 $(".Time_table tr:nth("+i+")").append("<td>"+sub+"</td>");
+  
+  }
+
+
+}
+
+}
+
+if($("p").hasClass("errorSubj"))
+{
+var msg = $(".errorSubj").text();
+alert(msg);
+$(".errorSubj").hide();
+history.back();
+}
+</script>
+</body>
+</html>

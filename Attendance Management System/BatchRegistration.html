@@ -1,0 +1,151 @@
+<html>
+<head>
+<link rel="stylesheet" href="../css/style.css"></link>
+<style>
+
+
+.main_sec .BatchTable
+{
+	
+	height:450px; 
+	width:780px;
+	margin-left:450px;
+	margin-top:-240px;
+	
+	
+}
+
+.main_sec .BatchTable table
+{
+	background-color:white;
+	height:auto; 
+	width:780px;
+	border:1px solid black;
+}
+
+.main_sec .BatchTable table tr:nth-child(odd) 
+{
+  background-color: #f2f2f2;
+}
+
+.main_sec .BatchTable table th
+{
+	height:20px; 
+	width:130px;
+	background-color:gainsboro;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+}
+
+.main_sec .BatchTable table td
+{
+	height:20px; 
+	width:130px;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+}
+.main_sec
+{
+
+height:350px;
+
+}
+
+
+
+
+</style>
+<title>Attendance Management System</title>
+</head>
+<body>
+<p id="dash_head" >Batch Registration</p>
+<p class="user">
+<figure style="margin-left:1140px; margin-top:-70px;" >
+<img src="../pictures/user.png" width="50px" height="50px" style="margin-left:35px;"/>
+<figcaption class="user_name" style="font-size:20px; padding-top:10px;">
+Priyanshi Tyagi
+</figcaption>
+</figure>
+</p>
+<br>
+<p  class="search_head"><input type="text" class="search"/>  <input type="button" value="Search" class="startSearch" /></p>
+<div class="main_sec">
+<form action="BatchRegistration" style="width:470px;"  autocomplete="off" method='post'>
+<p class="fields"> Batch Code &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="BatchCode" /> </p>
+<p class="fields"> Teacher Name <input type="text" class="BatchTeacherName" /> </p>
+<p class="fields"> Subject &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="BatchSubject" /> </p>
+<p class="fields"> Batch Days &nbsp;&nbsp;&nbsp;
+<select  class="BatchDays">
+<option>Select Batch Days</option>
+<option>Monday</option>
+<option>Tuesday</option>
+<option>Wednesday</option>
+<option>Thursday</option>
+<option>Friday</option>
+<option>Saturday</option>
+
+
+</select></p>
+<p class="fields"> Batch Timings 
+<select  class="BatchTimings">
+<option>Select Batch Timings</option>
+<option>NULL</option>
+<option>NULL</option>
+</select></p>
+
+</form>
+
+<div class="BatchTable" style="overflow-x:auto;">
+
+<table class="BatchRecord" >
+<tr class="headrow">
+<th> ID </th>
+<th> Batch Code </th>
+<th> Teacher Name</th>
+<th> Subject</th>
+<th> Batch Days </th>
+<th> Batch Timings </th>
+
+</tr>
+<tr>
+<td>1</td>
+<td>Priyanshi</td>
+<td>17105009</td>
+<td>83683317</td>
+<td>1719024</td>
+<td>123</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Priyanshi</td>
+<td>17105009</td>
+<td>83683317</td>
+<td>1719024</td>
+<td>123</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Priyanshi</td>
+<td>17105009</td>
+<td>83683317</td>
+<td>1719024</td>
+<td>123</td>
+</tr>
+
+</table>
+</div>
+
+</div>
+<div class="main_lowersec">
+<input type="button" value="Save" class="BatchSave" />
+<input type="button" value="Edit" class="BatchEdit" />
+<input type="button" value="Delete" class="BatchDelete" />
+<input type="button" value="Back" class="BatchBack" />
+
+</div>
+
+
+</body>
+</html>

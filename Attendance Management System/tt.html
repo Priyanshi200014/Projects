@@ -1,0 +1,662 @@
+<html>
+<head>
+<script src="jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="css/style.css"></link>
+<style>
+
+.main_sec .BatchTable
+{
+	
+	height:450px; 
+	width:780px;
+	margin-left:0px;
+	margin-top:10px;
+	
+	
+}
+
+.main_sec .BatchTable table
+{
+	background-color:white;
+	height:auto; 
+	width:780px;
+	border:1px solid black;
+}
+
+.main_sec .BatchTable table tr:nth-child(odd) 
+{
+  background-color: #f2f2f2;
+}
+
+.main_sec .BatchTable table th
+{
+	height:20px; 
+	width:140px;
+	background-color:gainsboro;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+		border-right:2px solid gray;
+
+}
+
+.main_sec .BatchTable table td
+{
+	height:20px; 
+	width:130px;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+	border-right:2px solid gray;
+	padding:10px;
+}
+.main_sec
+{
+
+height:800px;
+
+}
+.main_sec .BatchTable table td select
+{
+  width:90px;
+margin-left:10px;
+margin-bottom:5px;
+}
+
+.main_sec .options input
+{
+height:40px; margin-left:400px; margin-top:50px;
+}
+
+.small_fields1
+{
+font-size:18px;
+margin:30px;
+width:450px;
+margin-left:50px;
+}
+
+</style>
+<title>Attendance Management System</title>
+</head>
+<body>
+<p id="dash_head" >Time Table</p>
+<p class="user">
+<figure style="margin-left:1140px; margin-top:-70px;" >
+<img src="pictures/user.png" width="50px" height="50px" style="margin-left:35px;"/>
+<figcaption class="userN"  style="font-size:20px; padding-top:10px;">
+<input type="text" name="userName"  style="width:150px; font-size:18px;padding:5px;" disabled>
+</figcaption>
+</figure>
+</p>
+<div class="main_sec">
+<form action="saveTimeTable"  method="post"  autocomplete="off">
+<p class="fields">Enter Course Name  
+<select class="course_na1" name="course_name">
+<option>Course Name</option>
+<option>BVocWD</option>
+<!--<option>B.Voc(Web Designing)</option>
+<option>B.Voc(Printing Technology)</option>
+<option>B.Sc(H) Chemistry</option>
+<option>B.Sc(H) Physics</option>
+<option>B.Sc(H) Botany</option>
+<option>B.Sc(H) Computer Science</option>
+<option>B.Com</option>
+<option>B.A. (Hons.) Political Science</option>
+<option>B.A. (Hons.) Geography</option>
+<option>B.A. (Hons.) History</option>
+<option>B.A. (Hons.) English</option>
+<option>B.A. (Hons.) Hindi</option>
+<option>B.A. (Hons.) Journalism</option>
+<option>B.A. (Hons.) Sanskrit</option>
+-->
+</select></p>
+<div class="BatchTable">
+<table>
+<tr>
+<th><b>Days</b></th>
+<th><b>I</b><br>8:30 to 9:30</th>
+<th><b>II</b><br>9:30 to 10:30</th>
+<th><b>III</b><br>10:30 to 11:30</th>
+<th><b>IV</b><br>11:30 to 12:30</th>
+<th><b>BREAK</b><br>12:30 to 01:00</th>
+<th><b>V</b><br>01:00 to 02:00</th>
+<th><b>VI</b><br>02:00 to 03:00</th>
+<th><b>VII</b><br>03:00 to 04:00</th>
+<th><b>VIII</b><br>04:00 to 05:00</th>
+</tr>
+<tr>
+<td class="day1"><b>Monday</b></td>
+<td class="slotI1">
+<select class="SubjectsValues" name='slotI1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotII1">
+<select class="SubjectsValues" name='slotII1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+</td>
+<td class="slotIII1">
+<select class="SubjectsValues" name='slotIII1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+</td>
+<td class="slotIV1">
+ <select class="SubjectsValues" name='slotIV1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td></td>
+<td class="slotV1">
+<select class="SubjectsValues" name='slotV1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVI1">
+<select class="SubjectsValues" name='slotVI1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVII1">
+<select class="SubjectsValues"  name='slotVII1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVIII1">
+<select class="SubjectsValues"  name='slotVIII1_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+
+
+</tr>
+<tr>
+<td class="day2"><b>Tuesday</b></td>
+<td class="slotI2">
+<select class="SubjectsValues"  name='slotI2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotII2">
+<select class="SubjectsValues" name='slotII2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotIII2">
+<select class="SubjectsValues"  name='slotIII2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotIV2">
+ <select class="SubjectsValues" name='slotIV2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td></td>
+<td class="slotV2">
+<select class="SubjectsValues" name='slotV2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVI2">
+<select class="SubjectsValues" name='slotVI2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVII2">
+<select class="SubjectsValues" name='slotVII2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVIII2">
+<select class="SubjectsValues" name='slotVIII2_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+
+
+</tr>
+<tr>
+<td class="day3"><b>Wednesday</b></td>
+<td class="slotI3">
+<select class="SubjectsValues" name='slotI3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotII3">
+<select class="SubjectsValues" name='slotII3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotIII3">
+<select class="SubjectsValues" name='slotIII3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotIV3">
+ <select class="SubjectsValues" name='slotIV3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td></td>
+<td class="slotV3">
+<select class="SubjectsValues" name='slotV3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVI3">
+<select class="SubjectsValues" name='slotVI3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVII3">
+<select class="SubjectsValues" name='slotVII3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVIII3">
+<select class="SubjectsValues" name='slotVIII3_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+
+
+</tr>
+<tr>
+<td class="day4" ><b>Thursday</b></td>
+<td class="slotI4">
+<select class="SubjectsValues" name='slotI4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotII4">
+<select class="SubjectsValues" name='slotII4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotIII4">
+<select class="SubjectsValues" name='slotIII4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotIV4">
+ <select class="SubjectsValues" name='slotIV4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td></td>
+<td class="slotV4">
+<select class="SubjectsValues" name='slotV4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVI4">
+<select class="SubjectsValues" name='slotVI4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVII4">
+<select class="SubjectsValues" name='slotVII4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVIII4">
+<select class="SubjectsValues" name='slotVIII4_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+
+
+</tr>
+<tr>
+<td class="day5" ><b>Friday</b></td>
+<td class="slotI5">
+<select class="SubjectsValues" name='slotI5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotII5">
+<select class="SubjectsValues" name='slotII5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotIII5">
+<select class="SubjectsValues" name='slotIII5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotIV5">
+ <select class="SubjectsValues" name='slotIV5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td></td>
+<td class="slotV5">
+<select class="SubjectsValues" name='slotV5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVI5">
+<select class="SubjectsValues" name='slotVI5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVII5" >
+<select class="SubjectsValues" name='slotVII5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVIII5" >
+<select class="SubjectsValues" name='slotVIII5_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+
+
+</tr>
+<tr>
+<td class="day6" ><b>Saturday</b></td>
+<td class="slotI6">
+<select class="SubjectsValues" name='slotI6_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotII6">
+<select class="SubjectsValues" name='slotII6_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+
+</td>
+<td class="slotIII6" >
+<select class="SubjectsValues" name='slotIII6_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotIV6">
+ <select class="SubjectsValues" name='slotIV6_subject'>
+<option>Subject</option>
+
+<option>FREE</option>
+</select>
+
+
+</td>
+<td></td>
+<td class="slotV6" >
+<select class="SubjectsValues" name='slotV6_subject'>
+<option>Subject</option>
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVI6">
+<select class="SubjectsValues"  name='slotVI6_subject'>
+<option>Subject</option>
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVII6" >
+<select class="SubjectsValues" name='slotVII6_subject'>
+<option>Subject</option>
+<option>FREE</option>
+</select>
+
+
+</td>
+<td class="slotVIII6">
+<select class="SubjectsValues" name='slotVIII6_subject'>
+<option>Subject</option>
+<option>FREE</option>
+</select>
+
+
+</td>
+
+
+</tr>
+
+</table>
+<div class="options">
+<input type="submit" value="Save"  class="save" style="margin-left:300px;" />
+<input type="button" value="Back" style="margin-top:-37px; margin-left:700px;" onclick="history.back()" />
+
+</div>
+<p class="small_fields1">
+
+</p>
+
+</div>
+</form>
+</div>
+
+
+<script>
+
+if($("p").hasClass("user_name"))
+{
+$(".user_name").hide();
+var name = $(".user_name").text();
+$(".userN input").val(name);
+}
+
+
+if($("select").hasClass("Subjects"))
+{
+ 
+ var total = $(".Subjects option").length;
+ var sub="";
+ for(var i=0;i<total;i++)
+ {
+    sub = $(".Subjects option").eq(i).val();
+     $(".SubjectsValues").append("<option>"+sub+"</option>");
+ }
+$(".Subjects").hide();
+}
+
+if($("select").hasClass("Subjects_teachers"))
+{
+    var total = $(".Subjects_teachers option").length;
+    var sub="";
+ for(var i=0;i<total;i++)
+ {
+    sub = $(".Subjects_teachers option").eq(i).val();
+    $(".small_fields1").append("<p>"+sub+"</p>");
+ }
+	 
+	 
+$(".Subjects_teachers").hide();
+}
+
+
+</script>
+
+
+</body>
+</html>

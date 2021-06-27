@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css"></link>
+<script src="jquery-3.3.1.js"></script>
+
+<style>
+.main_sec
+{
+ height:300px;
+ width:900px;
+ padding:50px;
+}
+
+</style>
+<title>Attendance Management System</title>
+</head>
+<body>
+<p id="dash_head" >Admin Login</p>
+<div class="Registration_Form">
+
+<div class="main_sec">
+<form action="adminlog" method="post" style="width:500px; margin-top:60px;" autocomplete="off">
+<p class="fields">User Name &nbsp;<input type="text" name="UName" autocomplete="off" /></p>
+<p class="fields">Password &nbsp;&nbsp; <input type="password" name="password" id='mypassword' autocomplete="off" /><img src="pictures/seepassword.png" width="27px" height="32px" style="margin-left:-35px;  margin-top:5px; padding:0;" class='icon' /></p><br><br><br>
+
+
+<input type="Submit" value="Login"  style="width:120px; height:40px; margin-left:170px;"  class="login" />
+
+</form>
+<img src="pictures/admin.png"  width="180px" height="180px" style="margin-top:-270px; margin-left:470px;"/>
+</div>
+
+</div>
+<script>
+
+if($("p").hasClass("error"))
+{
+var msg = $(".error").text();
+alert(msg);
+$(".error").hide();
+
+}
+$('.icon').hover(function () {
+    $('#mypassword').attr('type', 'text');
+	console.log("text");
+}, function () {
+    $('#mypassword').attr('type', 'password');
+		console.log("password");
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+<head>
+<script src="jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="css/style.css"></link>
+<style>
+
+
+.main_sec .studTable
+{
+	
+	height:450px; 
+	width:780px;
+	margin-left:450px;
+	margin-top:-450px;
+	
+	
+}
+
+.main_sec .studTable table
+{
+	background-color:white;
+	height:auto; 
+	width:780px;
+	border:1px solid black;
+}
+
+.main_sec .studTable table tr:nth-child(odd) 
+{
+  background-color: #f2f2f2;
+}
+
+.main_sec .studTable table th
+{
+	height:20px; 
+	width:130px;
+	background-color:gainsboro;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+}
+
+.main_sec .studTable table td
+{
+	height:20px; 
+	width:130px;
+	font-weight:normal;
+	font-size:17px;
+	border-bottom:2px solid gray;
+}
+.main_sec
+{
+
+height:460px;
+
+}
+
+.main_lowersec 
+{
+	height:100px;
+	width:760px;
+	border-bottom:3px solid black;
+	margin-left:0px;
+	padding:30px 5px 0px 500px;
+	
+}
+
+
+</style>
+<title>Attendance Management System</title>
+</head>
+<body>
+<form action="StudentRegistration" style="width:470px;" method="post" autocomplete="off">
+
+<p id="dash_head" >Student Registration</p>
+<p class="user">
+<figure style="margin-left:1140px; margin-top:-70px;" >
+<img src="pictures/user.png" width="50px" height="50px" style="margin-left:35px;"/>
+<figcaption class="userN"  style="font-size:20px; padding-top:10px;">
+<input type="text" name="userName"  style="width:150px; font-size:18px;padding:5px;" disabled>
+</figcaption>
+</figure>
+</p>
+<br>
+<div class="main_sec">
+<p class="fields"> Student Name &nbsp;&nbsp;&nbsp;<input type="text" name="studName" style="background-color:rgba(0,0,0,0);border:none;outline:none;border-bottom:2px solid black;"/> </p>
+<p class="fields"> Roll No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="studRollNo" /> </p>
+<p class="fields"> Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select  name="studCourse">
+<option>Select Course</option>
+<option>BVocWD</option>
+</select></p>
+<p class="fields"> Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="studAddress" /> </p>
+<p class="fields"> Phone &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="studPhone" /> </p>
+<p class="fields"> E-mail Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="studEmailId" /> </p>
+<p class="fields"> Batch Code &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select  name="studBatchCode">
+<option>Select Batch Code</option>
+<option>BVOC2017_3</option>
+</select></p>
+<p class="fields"> Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select  name="studGender">
+<option>Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select> </p>
+<p class="fields"> Date Of Birth &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="studDOB" placeholder="  DD-MM-YYYY" /> </p>
+<div class="main_lowersec">
+
+<input type="Submit" value="Save" name="SaveDetails"/>
+<input type="button" value="Edit" class="NewSubjectEdit" onclick="location.reload()"/>
+<input type="button" value="Back" onclick="history.back()" />
+
+</div>
+</form>
+
+
+
+</div>
+
+
+<script>
+
+if($("p").hasClass("user_name"))
+{
+$(".user_name").hide();
+var name = $(".user_name").text();
+$(".userN input").val(name);
+}
+
+
+</script>
+
+</body>
+</html>

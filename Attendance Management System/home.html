@@ -1,0 +1,75 @@
+<html>
+<head>
+<style>
+body{
+background-image:url('bg2.jpg');
+ background-repeat: no-repeat;
+  background-size: cover;
+ height:100%;
+
+}
+
+</style>
+<script src="jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<title>Attendance Management System</title>
+</head>
+<body>
+<form action="NextTask" method="post"  autocomplete="off">
+
+<p id="dash_head">Welcome To Dashboard</p>
+<p class="user">
+<figure style="margin-left:1140px; margin-top:-40px;" >
+<img src="pictures/user.png" class='imag' width="100px" height="100px" style=" margin-left:15px;"/>
+<figcaption class="userN"  style="font-size:20px; padding-top:10px;">
+<input type="text" name="userName" style="width:150px; font-size:18px;padding:5px;" disabled>
+</figcaption>
+</figure>
+</p>
+
+
+<div class="main">
+
+<input type="submit" value="Student Registration" name="StudRegistration" class=" one_col stud_register" />
+<a href="ViewStudent.html"><input type="submit" value="View Student" name="viewStudent" class=" sec_col view_student" /></a>
+
+<input type="submit" value="Teacher Registration" name="teacherRegistration"  class=" one_col teacher_register" />
+<a href="ViewTeacher.html"><input type="submit" value="View Teacher" name="viewTeacher" class=" sec_col view_teacher" /></a>
+
+<input type="submit" value="Add New Subject" name="SubRegistration" class=" one_col add_subject" />
+<a href="ViewSubject.html"><input type="submit" value="View Subject" name="viewSubject"  class=" sec_col view_subject" /></a>
+
+<a href="tt.html"><input type="submit" value="New Timetable" name="ttRegistration" class=" one_col batch_register" /></a>
+<a href="ViewAttendance.html"><input type="submit" name='viewAttend' value="View Attendance" class=" sec_col view_batch" /></a>
+
+<a href="MarkAttendance.html"><input type="submit" value="Mark Attendance" name="markAttendance" class=" one_col mark_attendance" /></a>
+<a href="login.html"><input type="submit" value="Logout" name="logout"class=" sec_col " /></a>
+<p class="selected_values"></p>
+
+</div>
+</form>
+
+<script>
+if($("p").hasClass("user_name"))
+{
+$(".user_name").hide();
+var name = $(".user_name").text();
+$(".userN input").val(name);
+
+console.log($(".userN input").val());
+
+$("form .selected_values").append("<input type='text' class='select_val'  name='selected_name' value='"+name+"' />");
+		$('.selected_values input').hide();
+
+}
+if($("p").hasClass("error"))
+{
+var msg = $(".error").text();
+alert(msg);
+$(".error").hide();
+
+}
+
+</script>
+</body>
+</html>

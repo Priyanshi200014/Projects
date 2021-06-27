@@ -1,0 +1,305 @@
+<web-app>
+<servlet>
+    <servlet-name>
+     studRegister
+    </servlet-name>
+	<servlet-class>
+ 	 StudentRegister
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	  studRegister
+	</servlet-name>
+    <url-pattern>
+	 StudentRegistration
+	</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>
+     teacherRegister
+    </servlet-name>
+	<servlet-class>
+ 	 TeacherRegister
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	  teacherRegister
+	</servlet-name>
+    <url-pattern>
+	 TeacherRegistration
+	</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>
+     ttRegister
+    </servlet-name>
+	<servlet-class>
+ 	 TimeTable
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	   ttRegister
+	</servlet-name>
+    <url-pattern>
+	 saveTimeTable
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+     SubjectRegister
+    </servlet-name>
+	<servlet-class>
+ 	 NewSubject
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	  SubjectRegister
+	</servlet-name>
+    <url-pattern>
+	 NewSubjectRegistration
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+     register
+    </servlet-name>
+	<servlet-class>
+ 	  NewRegistration
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	   register
+	</servlet-name>
+    <url-pattern>
+	registration
+	</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>
+     log
+    </servlet-name>
+	<servlet-class>
+ 	  StudentLogin
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	    log
+	</servlet-name>
+    <url-pattern>
+	login
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+     adlog
+    </servlet-name>
+	<servlet-class>
+ 	  AdminLogin
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	    adlog
+	</servlet-name>
+    <url-pattern>
+	adminlog
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+     home
+    </servlet-name>
+	<servlet-class>
+ 	  homeServlet
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	    home
+	</servlet-name>
+    <url-pattern>
+	NextTask
+	</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>
+     markAtten
+    </servlet-name>
+	<servlet-class>
+ 	 MarkAttend
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	    markAtten
+	</servlet-name>
+    <url-pattern>
+	markAttendee
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+     subAtten
+    </servlet-name>
+	<servlet-class>
+ 	SubmitAttendance
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+		subAtten
+	</servlet-name>
+    <url-pattern>
+	submitAttendee
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+    viewlist1
+    </servlet-name>
+	<servlet-class>
+ 	ViewStud
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+		  viewlist1
+	</servlet-name>
+    <url-pattern>
+	ViewFileStud
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+    viewlist2
+    </servlet-name>
+	<servlet-class>
+ 	ViewTeach
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+		  viewlist2
+	</servlet-name>
+    <url-pattern>
+	ViewFileteacher
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+    viewlist3
+    </servlet-name>
+	<servlet-class>
+ 	ViewSubj
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	viewlist3
+	</servlet-name>
+    <url-pattern>
+	ViewFilesubject
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+    viewlist4
+    </servlet-name>
+	<servlet-class>
+ 	ViewAttend
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	viewlist4
+	</servlet-name>
+    <url-pattern>
+	ViewFileAttende
+	</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>
+  trial1
+    </servlet-name>
+	<servlet-class>
+ 	PdfFile
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	trial1
+	</servlet-name>
+    <url-pattern>
+	downl
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+     adminnext
+    </servlet-name>
+	<servlet-class>
+ 	  AdminCheckData
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	     adminnext
+	</servlet-name>
+    <url-pattern>
+	adminportal
+	</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>
+  chngepassword
+    </servlet-name>
+	<servlet-class>
+ 	ChangePassword
+	</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>
+	chngepassword
+	</servlet-name>
+    <url-pattern>
+	Changepassword
+	</url-pattern>
+</servlet-mapping>
+
+<welcome-file-list>
+<welcome-file>index.html</welcome-file>
+</welcome-file-list>
+</web-app>

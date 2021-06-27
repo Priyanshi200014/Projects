@@ -1,0 +1,180 @@
+<html>
+<head>
+<script src="jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="css/style.css"></link>
+<style>
+
+
+.main_sec .time_table
+{
+	
+	height:450px; 
+	width:780px;
+	margin-left:100px;
+	margin-top:50px;
+	
+	
+}
+
+.main_sec .time_table .Time_table
+{
+	background-color:white;
+	height:auto; 
+	width:780px;
+	border:1px solid black;
+}
+
+.main_sec .time_table .Time_table tr:nth-child(odd) 
+{
+  background-color: #f2f2f2;
+}
+
+.main_sec .time_table .Time_table th
+{
+	height:40px; 
+	width:140px;
+	background-color:gainsboro;
+	font-weight:normal;
+	font-size:17px;
+	text-align:center;
+	border-bottom:2px solid gray;
+}
+
+.main_sec .time_table .Time_table td
+{
+	height:40px; 
+	width:140px;
+	font-weight:normal;
+	font-size:17px;
+    text-align:center;
+	border-bottom:2px solid gray;
+}
+.main_sec
+{
+
+height:450px;
+
+}
+
+.main_lowersec 
+{
+	height:100px;
+	width:760px;
+	border-bottom:3px solid black;
+	margin-left:0px;
+	padding:0px 5px 0px 500px;
+	
+}
+
+
+
+
+</style>
+<title>Attendance Management System</title>
+</head>
+<body>
+<form action="markAttendee" method="post" style="width:470px;"  autocomplete="off">
+
+<p id="dash_head" >Mark Attendance</p>
+
+<p class="user">
+<figure style="margin-left:1140px; margin-top:-70px;" >
+<img src="pictures/user.png" width="50px" height="50px" style="margin-left:35px;"/>
+<figcaption class="userN"  style="font-size:20px; padding-top:10px;">
+<input type="text" name="userName" style="width:150px; font-size:18px;padding:5px;" disabled />
+</figcaption>
+</figure>
+</p>
+<br>
+
+<div class="main_sec">
+
+<p class="fields"> Course Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="CourseName" value=" BVoc (WD)"/> </p>
+<div class="time_table">
+
+
+
+
+</div>
+<input type="Submit" value="Submit" name="SubmitTT" style="height:40px; margin-left:300px;margin-bottom:100px;"/>
+<input type="button" value="Back" onclick="history.back()"  style="height:40px; margin-left:100px; margin-bottom:100px;"/>
+
+<p class="selected_values"></p>
+
+
+
+</div>
+</form>
+
+
+<script>
+
+
+if($("p").hasClass("user_name"))
+{
+$(".user_name").hide();
+var name = $(".user_name").text();
+
+$(".userN input").val(name);
+}
+
+if($("p").hasClass("error"))
+{
+$(".error").hide();
+var n = $(".error").text();
+
+alert(n);
+}
+
+if($("table").hasClass("ttable"))
+{
+$(".ttable").hide();
+
+$(".time_table").append("<table class='Time_table' border='1'><tr><th><b>Days</b></th><th><b>I</b></th><th><b>II</b> </th><th><b>III</b></th><th><b>IV</b></th> <th><b>V</b></th><th><b>VI</b></th><th><b>VII</b></th><th><b>VIII</b></th></tr></table>");
+
+var rows = 6;
+var cols = 8;
+var sub="";
+for(var i=1;i<=rows;i++)
+{
+      $(".Time_table").append("<tr></tr>");
+
+  for(var j=0;j<=cols;j++)
+  {
+     sub=$(".ttable tr:nth("+i+") td:nth("+j+")").text();
+	 $(".Time_table tr:nth("+i+")").append("<td class='subj'>"+sub+"</td>");
+  
+  }
+
+
+}
+
+}
+
+if($("td").hasClass("subj"))
+{
+   
+	$("table .subj").on("click",function(i,e)
+	{   $("table .subj").removeAttr( 'style' );
+		$("select_val").remove();
+	    var s = $(this).text();
+		var rowIndex = $(this).parent().index('.Time_table tr');
+        var tdIndex = $(this).index('.Time_table tr:eq('+rowIndex+') td');
+     
+	  var day = $(".Time_table tr:nth("+rowIndex+") td:nth("+0+")").text();
+	  var period = $(".Time_table tr:nth("+0+") th:nth("+tdIndex+")").text(); 
+	  $("form .selected_values").html("<input type='text' class='select_val' name='selected_subject' value='"+s+"' />");	
+	  $("form .selected_values").append("<input type='text' class='select_val'  name='selected_subject_day' value='"+day+"' />");	
+	  $("form .selected_values").append("<input type='text' class='select_val'  name='selected_subject_period' value='"+period+"' />");	
+	  $(".Time_table tr:nth("+rowIndex+") td:nth("+tdIndex+")").css("border","2px solid black");
+        $("form .selected_values").append("<input type='text' class='select_val'  name='selected_name' value='"+name+"' />");
+		$('.select_val').hide();
+	});
+	
+	
+}
+
+</script>
+
+</body>
+</html>
